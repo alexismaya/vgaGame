@@ -1,0 +1,1425 @@
+Analysis & Synthesis report for vga20
+Wed Dec 07 14:31:09 2022
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: vga_controller:u2
+ 14. Parameter Settings for User Entity Instance: hw_image_generator:u3
+ 15. Port Connectivity Checks: "vga_controller:u2"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Dec 07 14:31:09 2022       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; vga20                                       ;
+; Top-level Entity Name              ; vga20                                       ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 2,962                                       ;
+;     Total combinational functions  ; 2,943                                       ;
+;     Dedicated logic registers      ; 273                                         ;
+; Total registers                    ; 273                                         ;
+; Total pins                         ; 20                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; vga20              ; vga20              ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; vga20.vhd                        ; yes             ; User VHDL File  ; D:/alexi/Documents/Escuela/VLSI/VGA/vga20/vga20.vhd              ;         ;
+; vga_controller.vhd               ; yes             ; User VHDL File  ; D:/alexi/Documents/Escuela/VLSI/VGA/vga20/vga_controller.vhd     ;         ;
+; hw_image_generator.vhd           ; yes             ; User VHDL File  ; D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd ;         ;
+; Gen25MHz.vhd                     ; yes             ; User VHDL File  ; D:/alexi/Documents/Escuela/VLSI/VGA/vga20/Gen25MHz.vhd           ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                ;
++---------------------------------------------+------------------------------+
+; Resource                                    ; Usage                        ;
++---------------------------------------------+------------------------------+
+; Estimated Total logic elements              ; 2,962                        ;
+;                                             ;                              ;
+; Total combinational functions               ; 2943                         ;
+; Logic element usage by number of LUT inputs ;                              ;
+;     -- 4 input functions                    ; 1111                         ;
+;     -- 3 input functions                    ; 958                          ;
+;     -- <=2 input functions                  ; 874                          ;
+;                                             ;                              ;
+; Logic elements by mode                      ;                              ;
+;     -- normal mode                          ; 1649                         ;
+;     -- arithmetic mode                      ; 1294                         ;
+;                                             ;                              ;
+; Total registers                             ; 273                          ;
+;     -- Dedicated logic registers            ; 273                          ;
+;     -- I/O registers                        ; 0                            ;
+;                                             ;                              ;
+; I/O pins                                    ; 20                           ;
+;                                             ;                              ;
+; Embedded Multiplier 9-bit elements          ; 0                            ;
+;                                             ;                              ;
+; Maximum fan-out node                        ; vga_controller:u2|column[31] ;
+; Maximum fan-out                             ; 296                          ;
+; Total fan-out                               ; 9946                         ;
+; Average fan-out                             ; 3.05                         ;
++---------------------------------------------+------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name          ; Entity Name        ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------+--------------------+--------------+
+; |vga20                     ; 2943 (0)            ; 273 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 20   ; 0            ; 0          ; |vga20                       ; vga20              ; work         ;
+;    |Gen25MHz:u1|           ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga20|Gen25MHz:u1           ; Gen25MHz           ; work         ;
+;    |hw_image_generator:u3| ; 2883 (2883)         ; 228 (228)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga20|hw_image_generator:u3 ; hw_image_generator ; work         ;
+;    |vga_controller:u2|     ; 59 (59)             ; 44 (44)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga20|vga_controller:u2     ; vga_controller     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                       ;
++-----------------------------------------------------+----------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal        ; Free of Timing Hazards ;
++-----------------------------------------------------+----------------------------+------------------------+
+; hw_image_generator:u3|red[0]                        ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|red[1]                        ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|red[2]                        ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|red[3]                        ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|green[0]                      ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|green[1]                      ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|green[2]                      ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|green[3]                      ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|blue[0]                       ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|blue[1]                       ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|blue[2]                       ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|blue[3]                       ; vga_controller:u2|disp_ena ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                            ;                        ;
++-----------------------------------------------------+----------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                       ;
++------------------------------------------+-----------------------------------------------+
+; Register name                            ; Reason for Removal                            ;
++------------------------------------------+-----------------------------------------------+
+; vga_controller:u2|column[10..30]         ; Stuck at GND due to stuck port data_in        ;
+; vga_controller:u2|row[10..30]            ; Stuck at GND due to stuck port data_in        ;
+; hw_image_generator:u3|conteo2[0]         ; Stuck at GND due to stuck port data_in        ;
+; hw_image_generator:u3|conteo6[0]         ; Stuck at GND due to stuck port data_in        ;
+; hw_image_generator:u3|conteo3[0]         ; Stuck at GND due to stuck port data_in        ;
+; hw_image_generator:u3|conteo4[0]         ; Stuck at GND due to stuck port data_in        ;
+; hw_image_generator:u3|conteo5[0]         ; Stuck at GND due to stuck port data_in        ;
+; hw_image_generator:u3|luffy11[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy12[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy13[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy14[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy15[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy16[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy17[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy18[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy19[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy1[10]         ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy20[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy21[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy22[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy23[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy24[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy25[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy26[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy27[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy28[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy29[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy2[10]         ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy30[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy31[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy32[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy33[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy34[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy35[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy36[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy37[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy38[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy39[10]        ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy3[10]         ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy4[10]         ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy5[10]         ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy6[10]         ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy7[10]         ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy8[10]         ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy9[10]         ; Merged with hw_image_generator:u3|luffy10[10] ;
+; hw_image_generator:u3|luffy11[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy12[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy13[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy14[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy15[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy16[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy17[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy18[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy19[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy1[9]          ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy20[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy21[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy22[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy23[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy24[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy25[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy26[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy27[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy28[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy29[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy2[9]          ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy30[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy31[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy32[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy33[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy34[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy35[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy36[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy37[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy38[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy39[9]         ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy3[9]          ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy4[9]          ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy5[9]          ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy6[9]          ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy7[9]          ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy8[9]          ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy9[9]          ; Merged with hw_image_generator:u3|luffy10[9]  ;
+; hw_image_generator:u3|luffy11[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy12[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy13[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy14[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy15[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy16[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy17[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy18[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy19[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy1[8]          ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy20[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy21[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy22[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy23[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy24[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy25[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy26[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy27[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy28[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy29[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy2[8]          ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy30[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy31[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy32[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy33[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy34[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy35[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy36[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy37[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy38[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy39[8]         ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy3[8]          ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy4[8]          ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy5[8]          ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy6[8]          ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy7[8]          ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy8[8]          ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy9[8]          ; Merged with hw_image_generator:u3|luffy10[8]  ;
+; hw_image_generator:u3|luffy11[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy12[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy13[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy14[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy15[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy16[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy17[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy18[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy19[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy1[7]          ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy20[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy21[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy22[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy23[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy24[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy25[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy26[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy27[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy28[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy29[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy2[7]          ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy30[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy31[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy32[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy33[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy34[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy35[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy36[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy37[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy38[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy39[7]         ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy3[7]          ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy4[7]          ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy5[7]          ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy6[7]          ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy7[7]          ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy8[7]          ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy9[7]          ; Merged with hw_image_generator:u3|luffy10[7]  ;
+; hw_image_generator:u3|luffy11[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy12[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy13[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy14[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy15[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy16[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy17[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy18[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy19[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy1[6]          ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy20[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy21[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy22[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy23[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy24[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy25[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy26[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy27[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy28[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy29[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy2[6]          ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy30[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy31[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy32[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy33[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy34[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy35[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy36[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy37[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy38[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy39[6]         ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy3[6]          ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy4[6]          ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy5[6]          ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy6[6]          ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy7[6]          ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy8[6]          ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy9[6]          ; Merged with hw_image_generator:u3|luffy10[6]  ;
+; hw_image_generator:u3|luffy11[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy12[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy13[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy14[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy15[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy16[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy17[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy18[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy19[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy1[5]          ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy20[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy21[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy22[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy23[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy24[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy25[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy26[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy27[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy28[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy29[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy2[5]          ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy30[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy31[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy32[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy33[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy34[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy35[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy36[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy37[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy38[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy39[5]         ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy3[5]          ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy4[5]          ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy5[5]          ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy6[5]          ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy7[5]          ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy8[5]          ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy9[5]          ; Merged with hw_image_generator:u3|luffy10[5]  ;
+; hw_image_generator:u3|luffy11[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy12[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy13[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy14[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy15[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy16[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy17[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy18[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy19[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy1[4]          ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy20[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy21[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy22[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy23[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy24[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy25[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy26[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy27[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy28[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy29[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy2[4]          ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy30[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy31[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy32[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy33[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy34[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy35[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy36[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy37[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy38[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy39[4]         ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy3[4]          ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy4[4]          ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy5[4]          ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy6[4]          ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy7[4]          ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy8[4]          ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy9[4]          ; Merged with hw_image_generator:u3|luffy10[4]  ;
+; hw_image_generator:u3|luffy11[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy12[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy13[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy14[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy15[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy16[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy17[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy18[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy19[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy1[3]          ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy20[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy21[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy22[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy23[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy24[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy25[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy26[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy27[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy28[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy29[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy2[3]          ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy30[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy31[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy32[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy33[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy34[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy35[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy36[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy37[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy38[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy39[3]         ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy3[3]          ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy4[3]          ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy5[3]          ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy6[3]          ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy7[3]          ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy8[3]          ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy9[3]          ; Merged with hw_image_generator:u3|luffy10[3]  ;
+; hw_image_generator:u3|luffy11[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy12[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy13[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy14[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy15[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy16[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy17[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy18[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy19[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy1[2]          ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy20[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy21[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy22[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy23[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy24[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy25[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy26[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy27[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy28[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy29[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy2[2]          ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy30[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy31[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy32[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy33[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy34[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy35[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy36[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy37[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy38[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy39[2]         ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy3[2]          ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy4[2]          ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy5[2]          ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy6[2]          ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy7[2]          ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy8[2]          ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy9[2]          ; Merged with hw_image_generator:u3|luffy10[2]  ;
+; hw_image_generator:u3|luffy11[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy12[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy13[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy14[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy15[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy16[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy17[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy18[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy19[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy1[1]          ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy20[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy21[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy22[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy23[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy24[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy25[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy26[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy27[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy28[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy29[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy2[1]          ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy30[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy31[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy32[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy33[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy34[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy35[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy36[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy37[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy38[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy39[1]         ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy3[1]          ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy4[1]          ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy5[1]          ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy6[1]          ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy7[1]          ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy8[1]          ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy9[1]          ; Merged with hw_image_generator:u3|luffy10[1]  ;
+; hw_image_generator:u3|luffy11[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy12[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy13[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy14[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy15[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy16[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy17[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy18[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy19[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy1[0]          ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy20[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy21[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy22[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy23[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy24[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy25[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy26[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy27[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy28[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy29[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy2[0]          ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy30[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy31[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy32[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy33[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy34[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy35[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy36[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy37[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy38[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy39[0]         ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy3[0]          ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy4[0]          ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy5[0]          ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy6[0]          ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy7[0]          ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy8[0]          ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffy9[0]          ; Merged with hw_image_generator:u3|luffy10[0]  ;
+; hw_image_generator:u3|luffx10[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx11[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx12[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx13[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx14[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx15[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx16[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx17[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx18[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx19[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx1[10]         ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx20[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx21[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx22[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx23[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx24[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx25[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx26[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx27[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx28[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx29[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx2[10]         ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx30[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx31[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx32[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx33[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx34[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx35[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx36[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx37[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx38[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx39[10]        ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx3[10]         ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx4[10]         ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx5[10]         ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx6[10]         ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx7[10]         ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx8[10]         ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx9[10]         ; Merged with hw_image_generator:u3|luffx0[10]  ;
+; hw_image_generator:u3|luffx10[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx11[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx12[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx13[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx14[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx15[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx16[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx17[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx18[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx19[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx1[9]          ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx20[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx21[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx22[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx23[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx24[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx25[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx26[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx27[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx28[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx29[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx2[9]          ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx30[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx31[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx32[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx33[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx34[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx35[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx36[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx37[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx38[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx39[9]         ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx3[9]          ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx4[9]          ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx5[9]          ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx6[9]          ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx7[9]          ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx8[9]          ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx9[9]          ; Merged with hw_image_generator:u3|luffx0[9]   ;
+; hw_image_generator:u3|luffx10[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx11[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx12[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx13[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx14[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx15[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx16[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx17[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx18[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx19[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx1[8]          ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx20[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx21[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx22[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx23[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx24[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx25[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx26[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx27[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx28[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx29[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx2[8]          ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx30[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx31[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx32[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx33[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx34[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx35[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx36[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx37[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx38[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx39[8]         ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx3[8]          ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx4[8]          ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx5[8]          ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx6[8]          ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx7[8]          ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx8[8]          ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx9[8]          ; Merged with hw_image_generator:u3|luffx0[8]   ;
+; hw_image_generator:u3|luffx10[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx11[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx12[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx13[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx14[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx15[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx16[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx17[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx18[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx19[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx1[7]          ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx20[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx21[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx22[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx23[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx24[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx25[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx26[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx27[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx28[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx29[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx2[7]          ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx30[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx31[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx32[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx33[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx34[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx35[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx36[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx37[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx38[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx39[7]         ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx3[7]          ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx4[7]          ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx5[7]          ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx6[7]          ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx7[7]          ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx8[7]          ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx9[7]          ; Merged with hw_image_generator:u3|luffx0[7]   ;
+; hw_image_generator:u3|luffx10[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx11[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx12[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx13[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx14[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx15[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx16[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx17[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx18[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx19[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx1[6]          ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx20[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx21[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx22[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx23[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx24[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx25[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx26[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx27[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx28[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx29[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx2[6]          ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx30[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx31[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx32[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx33[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx34[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx35[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx36[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx37[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx38[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx39[6]         ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx3[6]          ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx4[6]          ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx5[6]          ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx6[6]          ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx7[6]          ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx8[6]          ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx9[6]          ; Merged with hw_image_generator:u3|luffx0[6]   ;
+; hw_image_generator:u3|luffx10[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx11[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx12[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx13[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx14[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx15[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx16[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx17[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx18[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx19[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx1[5]          ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx20[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx21[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx22[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx23[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx24[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx25[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx26[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx27[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx28[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx29[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx2[5]          ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx30[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx31[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx32[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx33[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx34[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx35[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx36[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx37[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx38[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx39[5]         ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx3[5]          ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx4[5]          ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx5[5]          ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx6[5]          ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx7[5]          ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx8[5]          ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx9[5]          ; Merged with hw_image_generator:u3|luffx0[5]   ;
+; hw_image_generator:u3|luffx10[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx11[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx12[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx13[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx14[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx15[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx16[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx17[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx18[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx19[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx1[4]          ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx20[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx21[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx22[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx23[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx24[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx25[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx26[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx27[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx28[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx29[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx2[4]          ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx30[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx31[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx32[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx33[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx34[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx35[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx36[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx37[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx38[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx39[4]         ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx3[4]          ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx4[4]          ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx5[4]          ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx6[4]          ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx7[4]          ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx8[4]          ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx9[4]          ; Merged with hw_image_generator:u3|luffx0[4]   ;
+; hw_image_generator:u3|luffx10[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx11[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx12[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx13[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx14[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx15[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx16[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx17[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx18[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx19[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx1[3]          ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx20[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx21[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx22[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx23[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx24[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx25[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx26[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx27[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx28[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx29[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx2[3]          ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx30[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx31[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx32[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx33[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx34[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx35[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx36[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx37[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx38[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx39[3]         ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx3[3]          ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx4[3]          ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx5[3]          ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx6[3]          ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx7[3]          ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx8[3]          ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx9[3]          ; Merged with hw_image_generator:u3|luffx0[3]   ;
+; hw_image_generator:u3|luffx10[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx11[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx12[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx13[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx14[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx15[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx16[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx17[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx18[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx19[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx1[2]          ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx20[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx21[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx22[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx23[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx24[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx25[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx26[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx27[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx28[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx29[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx2[2]          ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx30[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx31[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx32[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx33[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx34[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx35[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx36[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx37[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx38[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx39[2]         ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx3[2]          ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx4[2]          ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx5[2]          ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx6[2]          ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx7[2]          ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx8[2]          ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx9[2]          ; Merged with hw_image_generator:u3|luffx0[2]   ;
+; hw_image_generator:u3|luffx10[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx11[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx12[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx13[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx14[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx15[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx16[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx17[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx18[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx19[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx1[1]          ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx20[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx21[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx22[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx23[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx24[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx25[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx26[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx27[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx28[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx29[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx2[1]          ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx30[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx31[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx32[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx33[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx34[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx35[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx36[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx37[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx38[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx39[1]         ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx3[1]          ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx4[1]          ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx5[1]          ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx6[1]          ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx7[1]          ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx8[1]          ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx9[1]          ; Merged with hw_image_generator:u3|luffx0[1]   ;
+; hw_image_generator:u3|luffx10[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx11[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx12[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx13[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx14[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx15[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx16[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx17[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx18[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx19[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx1[0]          ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx20[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx21[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx22[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx23[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx24[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx25[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx26[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx27[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx28[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx29[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx2[0]          ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx30[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx31[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx32[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx33[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx34[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx35[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx36[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx37[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx38[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx39[0]         ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx3[0]          ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx4[0]          ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx5[0]          ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx6[0]          ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx7[0]          ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx8[0]          ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|luffx9[0]          ; Merged with hw_image_generator:u3|luffx0[0]   ;
+; hw_image_generator:u3|sense[1..9,11..31] ; Merged with hw_image_generator:u3|sense[10]   ;
+; hw_image_generator:u3|conteo1[0]         ; Stuck at GND due to stuck port data_in        ;
+; hw_image_generator:u3|sense[10]          ; Stuck at GND due to stuck port data_in        ;
+; vga_controller:u2|row[9]                 ; Stuck at GND due to stuck port data_in        ;
+; Total Number of Removed Registers = 927  ;                                               ;
++------------------------------------------+-----------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 273   ;
+; Number of registers using Synchronous Clear  ; 125   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 245   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; vga_controller:u2|column[31]            ; 296     ;
+; vga_controller:u2|row[31]               ; 39      ;
+; vga_controller:u2|row[0]                ; 41      ;
+; vga_controller:u2|column[0]             ; 44      ;
+; hw_image_generator:u3|plat0x1[9]        ; 4       ;
+; hw_image_generator:u3|plat0x1[4]        ; 4       ;
+; hw_image_generator:u3|plat0x1[2]        ; 5       ;
+; hw_image_generator:u3|plat0x1[3]        ; 4       ;
+; hw_image_generator:u3|plat0y1[6]        ; 4       ;
+; hw_image_generator:u3|plat0y1[5]        ; 4       ;
+; hw_image_generator:u3|plat0y1[3]        ; 4       ;
+; hw_image_generator:u3|plat0y1[2]        ; 4       ;
+; Total number of inverted registers = 12 ;         ;
++-----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |vga20|hw_image_generator:u3|conteo1[4]  ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |vga20|hw_image_generator:u3|luffy0[9]   ;
+; 5:1                ; 30 bits   ; 90 LEs        ; 60 LEs               ; 30 LEs                 ; Yes        ; |vga20|hw_image_generator:u3|plat1y1[5]  ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 22 LEs               ; 11 LEs                 ; Yes        ; |vga20|hw_image_generator:u3|luffy10[10] ;
+; 6:1                ; 11 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |vga20|hw_image_generator:u3|luffx0[6]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga20|hw_image_generator:u3|plat0x1[4]  ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |vga20|vga_controller:u2|v_count         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_controller:u2 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; h_pulse        ; 96    ; Signed Integer                        ;
+; h_bp           ; 48    ; Signed Integer                        ;
+; h_pixels       ; 640   ; Signed Integer                        ;
+; h_fp           ; 16    ; Signed Integer                        ;
+; h_pol          ; '0'   ; Enumerated                            ;
+; v_pulse        ; 2     ; Signed Integer                        ;
+; v_bp           ; 33    ; Signed Integer                        ;
+; v_pixels       ; 480   ; Signed Integer                        ;
+; v_fp           ; 10    ; Signed Integer                        ;
+; v_pol          ; '0'   ; Enumerated                            ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: hw_image_generator:u3 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; pixels_y       ; 478   ; Signed Integer                            ;
+; pixels_x       ; 600   ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "vga_controller:u2" ;
++---------+-------+----------+------------------+
+; Port    ; Type  ; Severity ; Details          ;
++---------+-------+----------+------------------+
+; reset_n ; Input ; Info     ; Stuck at VCC     ;
++---------+-------+----------+------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 20                          ;
+; cycloneiii_ff         ; 273                         ;
+;     ENA               ; 120                         ;
+;     ENA SCLR          ; 125                         ;
+;     plain             ; 28                          ;
+; cycloneiii_lcell_comb ; 2943                        ;
+;     arith             ; 1294                        ;
+;         2 data inputs ; 593                         ;
+;         3 data inputs ; 701                         ;
+;     normal            ; 1649                        ;
+;         0 data inputs ; 5                           ;
+;         1 data inputs ; 59                          ;
+;         2 data inputs ; 217                         ;
+;         3 data inputs ; 257                         ;
+;         4 data inputs ; 1111                        ;
+;                       ;                             ;
+; Max LUT depth         ; 74.00                       ;
+; Average LUT depth     ; 39.81                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:13     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Wed Dec 07 14:30:35 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga20 -c vga20
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file vga20.vhd
+    Info (12022): Found design unit 1: vga20-behavioral File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/vga20.vhd Line: 22
+    Info (12023): Found entity 1: vga20 File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/vga20.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file vga_controller.vhd
+    Info (12022): Found design unit 1: vga_controller-behavior File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/vga_controller.vhd Line: 50
+    Info (12023): Found entity 1: vga_controller File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/vga_controller.vhd Line: 26
+Info (12021): Found 2 design units, including 1 entities, in source file hw_image_generator.vhd
+    Info (12022): Found design unit 1: hw_image_generator-behavior File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 43
+    Info (12023): Found entity 1: hw_image_generator File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 25
+Info (12021): Found 2 design units, including 1 entities, in source file gen25mhz.vhd
+    Info (12022): Found design unit 1: Gen25MHz-behavior File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/Gen25MHz.vhd Line: 10
+    Info (12023): Found entity 1: Gen25MHz File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/Gen25MHz.vhd Line: 4
+Info (12127): Elaborating entity "vga20" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at vga20.vhd(27): object "reset" assigned a value but never read File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/vga20.vhd Line: 27
+Warning (10036): Verilog HDL or VHDL warning at vga20.vhd(27): object "cs" assigned a value but never read File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/vga20.vhd Line: 27
+Info (12129): Elaborating entity "Gen25MHz" using architecture "A:behavior" for hierarchy "Gen25MHz:u1" File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/vga20.vhd Line: 35
+Info (12129): Elaborating entity "vga_controller" using architecture "A:behavior" for hierarchy "vga_controller:u2" File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/vga20.vhd Line: 37
+Info (12129): Elaborating entity "hw_image_generator" using architecture "A:behavior" for hierarchy "hw_image_generator:u3" File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/vga20.vhd Line: 40
+Warning (10540): VHDL Signal Declaration warning at hw_image_generator.vhd(45): used explicit default value for signal "MAX" because signal was never assigned a value File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 45
+Warning (10540): VHDL Signal Declaration warning at hw_image_generator.vhd(46): used explicit default value for signal "MED" because signal was never assigned a value File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 46
+Warning (10036): Verilog HDL or VHDL warning at hw_image_generator.vhd(49): object "subClk" assigned a value but never read File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 49
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1107): signal "luffy0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1107
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1107): signal "luffx0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1107
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1111): signal "luffy1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1111
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1111): signal "luffx1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1111
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1115): signal "luffy2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1115
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1115): signal "luffx2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1115
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1119): signal "luffy3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1119
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1119): signal "luffx3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1119
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1123): signal "luffy4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1123
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1123): signal "luffx4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1123
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1127): signal "luffy5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1127
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1127): signal "luffx5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1127
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1131): signal "luffy6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1131
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1131): signal "luffx6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1131
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1135): signal "luffy7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1135
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1135): signal "luffx7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1135
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1139): signal "luffy8" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1139
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1139): signal "luffx8" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1139
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1143): signal "luffy9" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1143
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1143): signal "luffx9" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1143
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1147): signal "luffy10" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1147
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1147): signal "luffx10" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1147
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1151): signal "luffy11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1151
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1151): signal "luffx11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1151
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1155): signal "luffy12" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1155
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1155): signal "luffx12" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1155
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1159): signal "luffy13" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1159
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1159): signal "luffx13" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1159
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1163): signal "luffy14" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1163
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1163): signal "luffx14" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1163
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1167): signal "luffy15" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1167
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1167): signal "luffx15" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1167
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1171): signal "luffy16" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1171
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1171): signal "luffx16" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1171
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1175): signal "luffy17" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1175
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1175): signal "luffx17" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1175
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1179): signal "luffy18" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1179
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1179): signal "luffx18" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1179
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1183): signal "luffy19" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1183
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1183): signal "luffx19" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1183
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1187): signal "luffy20" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1187
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1187): signal "luffx20" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1187
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1191): signal "luffy21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1191
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1191): signal "luffx21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1191
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1195): signal "luffy22" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1195
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1195): signal "luffx22" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1195
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1199): signal "luffy23" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1199
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1199): signal "luffx23" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1199
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1203): signal "luffy24" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1203
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1203): signal "luffx24" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1203
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1207): signal "luffy25" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1207
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1207): signal "luffx25" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1207
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1211): signal "luffy26" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1211
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1211): signal "luffx26" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1211
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1215): signal "luffy27" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1215
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1215): signal "luffx27" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1215
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1219): signal "luffy28" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1219
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1219): signal "luffx28" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1219
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1223): signal "luffy30" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1223
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1223): signal "luffx30" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1223
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1227): signal "luffy29" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1227
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1227): signal "luffx29" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1227
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1231): signal "luffy31" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1231
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1231): signal "luffx31" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1231
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1235): signal "luffy32" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1235
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1235): signal "luffx32" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1235
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1239): signal "luffy34" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1239
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1239): signal "luffx34" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1239
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1243): signal "luffy33" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1243
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1243): signal "luffx33" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1243
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1247): signal "luffy34" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1247
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1247): signal "luffx34" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1247
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1251): signal "luffy34" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1251
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1251): signal "luffx34" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1251
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1255): signal "luffy35" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1255
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1255): signal "luffx35" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1255
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1259): signal "luffy36" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1259
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1259): signal "luffx36" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1259
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1263): signal "luffy37" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1263
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1263): signal "luffx37" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1263
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1267): signal "luffy38" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1267
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1267): signal "luffx38" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1267
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1271): signal "luffy39" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1271
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1271): signal "luffx39" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1271
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1275): signal "luffy39" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1275
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1275): signal "luffx39" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1275
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1279): signal "luffy39" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1279
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1279): signal "luffx39" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1279
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1283): signal "luffy39" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1283
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1283): signal "luffx39" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1283
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1287): signal "luffy39" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1287
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1287): signal "luffx39" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1287
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1291): signal "luffy39" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1291
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1291): signal "luffx39" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1291
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1298): signal "plat1y1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1298
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1298): signal "plat1x1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1298
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1302): signal "plat0y1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1302
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(1302): signal "plat0x1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 1302
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(2051): signal "sense" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 2051
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(2051): signal "initSw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 2051
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(2064): signal "sense" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 2064
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(2064): signal "initSw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 2064
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(2082): signal "dirSw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 2082
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(2170): signal "dirSw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 2170
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(2271): signal "fall" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 2271
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(2271): signal "jumping" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 2271
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(2359): signal "jumpE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 2359
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(2359): signal "jumping" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 2359
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(96): inferring latch(es) for signal or variable "red", which holds its previous value in one or more paths through the process File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(96): inferring latch(es) for signal or variable "green", which holds its previous value in one or more paths through the process File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(96): inferring latch(es) for signal or variable "blue", which holds its previous value in one or more paths through the process File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Info (10041): Inferred latch for "blue[0]" at hw_image_generator.vhd(96) File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Info (10041): Inferred latch for "blue[1]" at hw_image_generator.vhd(96) File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Info (10041): Inferred latch for "blue[2]" at hw_image_generator.vhd(96) File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Info (10041): Inferred latch for "blue[3]" at hw_image_generator.vhd(96) File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Info (10041): Inferred latch for "green[0]" at hw_image_generator.vhd(96) File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Info (10041): Inferred latch for "green[1]" at hw_image_generator.vhd(96) File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Info (10041): Inferred latch for "green[2]" at hw_image_generator.vhd(96) File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Info (10041): Inferred latch for "green[3]" at hw_image_generator.vhd(96) File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Info (10041): Inferred latch for "red[0]" at hw_image_generator.vhd(96) File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Info (10041): Inferred latch for "red[1]" at hw_image_generator.vhd(96) File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Info (10041): Inferred latch for "red[2]" at hw_image_generator.vhd(96) File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Info (10041): Inferred latch for "red[3]" at hw_image_generator.vhd(96) File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|red[3]" merged with LATCH primitive "hw_image_generator:u3|red[0]" File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|red[2]" merged with LATCH primitive "hw_image_generator:u3|red[0]" File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|red[1]" merged with LATCH primitive "hw_image_generator:u3|red[0]" File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|green[3]" merged with LATCH primitive "hw_image_generator:u3|green[0]" File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|green[2]" merged with LATCH primitive "hw_image_generator:u3|green[0]" File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|green[1]" merged with LATCH primitive "hw_image_generator:u3|green[0]" File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|blue[3]" merged with LATCH primitive "hw_image_generator:u3|blue[0]" File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|blue[2]" merged with LATCH primitive "hw_image_generator:u3|blue[0]" File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|blue[1]" merged with LATCH primitive "hw_image_generator:u3|blue[0]" File: D:/alexi/Documents/Escuela/VLSI/VGA/vga20/hw_image_generator.vhd Line: 96
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 3002 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 2982 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 117 warnings
+    Info: Peak virtual memory: 4820 megabytes
+    Info: Processing ended: Wed Dec 07 14:31:09 2022
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:00:30
+
+
